@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Muharram 1448 H - Musholla Al Jihad</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            --primary: #047857; /* Emerald Green */
+            --primary-dark: #064e3b;
+            --accent: #d97706; /* Gold */
+            --bg-light: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --danger: #dc2626;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg-light); color: var(--text-dark); }
+        h1, h2, h3 { font-family: 'Amiri', serif; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Helpers */
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .gap-4 { gap: 1rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .text-center { text-align: center; }
+        .hidden { display: none !important; }
+
+        /* Buttons */
+        .btn { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-accent { background: var(--accent); color: white; }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-outline { border: 1px solid var(--primary); color: var(--primary); background: transparent; }
+        
+        /* Navbar */
+        nav { background: var(--white); padding: 15px 0; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .brand { font-size: 1.5rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+
+        /* Hero & Countdown */
+        header { background: linear-gradient(rgba(6,78,59,0.85), rgba(6,78,59,0.95)), url('https://picsum.photos/seed/mosque_arch/1920/1080'); background-size: cover; background-position: center; color: white; padding: 80px 0 60px; text-align: center; position: relative; }
+        .date-badge { background: var(--accent); padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; margin-bottom: 15px; display: inline-block; }
+        .countdown { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
+        .cd-box { background: rgba(255,255,255,0.15); backdrop-filter: blur(5px); padding: 15px; border-radius: 8px; min-width: 80px; border: 1px solid rgba(255,255,255,0.3); }
+        .cd-box span { font-size: 2rem; font-weight: 700; display: block; }
+
+        /* Section Styles */
+        section { padding: 60px 0; }
+        .section-title { text-align: center; margin-bottom: 40px; color: var(--primary-dark); font-size: 2.2rem; }
+        
+        /* Profile Cards */
+        .card { background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; position: relative; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); }
+        
+        /* Logo Editing */
+        .logo-wrapper { position: relative; width: 120px; height: 120px; margin: 0 auto 20px; }
+        .logo-img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; border: 3px solid var(--accent); padding: 5px; background: white; }
+        .edit-overlay { position: absolute; bottom: 5px; right: 5px; background: var(--primary); color: white; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 2px solid white; }
+
+        /* Mentor */
+        .mentor-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--accent); margin-bottom: 20px; }
+        .mentor-role { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+
+        /* RAJ Grid */
+        .raj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; }
+        .member-card { background: var(--white); padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; position: relative; }
+        .member-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid var(--bg-light); }
+        .member-badge { display: inline-block; background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; margin-bottom: 10px; }
+        .card-actions { position: absolute; top: 15px; right: 15px; display: flex; gap: 5px; }
+        .icon-btn { width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; background: #f3f4f6; color: #666; }
+        .icon-btn:hover { background: var(--primary); color: white; }
+        .icon-btn.del:hover { background: var(--danger); color: white; }
+
+        /* Check-in Section */
+        .checkin-section { background: white; border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); border-top: 5px solid var(--accent); }
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .form-input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; font-family: inherit; }
+        .form-input:focus { border-color: var(--primary); }
+        
+        /* Guest List */
+        .guest-list { margin-top: 30px; max-height: 400px; overflow-y: auto; border: 1px solid #eee; border-radius: 8px; }
+        .guest-item { display: flex; align-items: center; justify-content: space-between; padding: 15px; border-bottom: 1px solid #f3f4f6; background: white; animation: fadeIn 0.5s; }
+        .guest-item:last-child { border-bottom: none; }
+        .guest-info strong { display: block; color: var(--text-dark); }
+        .guest-meta { font-size: 0.85rem; color: var(--text-light); }
+        .guest-badge { padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; }
+        .bg-remaja { background: #dbeafe; color: #1e40af; }
+        .bg-jamaah { background: #dcfce7; color: #166534; }
+        .bg-tamu { background: #fef3c7; color: #92400e; }
+
+        /* Modals */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+        .modal-content { background: white; padding: 30px; border-radius: var(--radius); width: 90%; max-width: 450px; animation: slideUp 0.3s; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        footer { background: var(--primary-dark); color: white; text-align: center; padding: 40px 0; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container nav-content">
+            <div class="brand">
+                <i class="ph ph-moon-stars" style="font-size: 1.8rem;"></i> 1 Muharram
+            </div>
+            <a href="#checkin" class="btn btn-primary">Check-in Sekarang</a>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <header>
+        <div class="container">
+            <div class="date-badge">MINGGU, 28 JUNI 2026</div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 10px; line-height: 1.2;">Musholla Al Jihad</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">Peringatan Tahun Baru Islam 1448 H</p>
+            <p style="margin-top: 10px; font-style: italic; opacity: 0.8;">"Momentum Hijrah Bersama Anggota RAJ & BKM A J"</p>
+            
+            <div class="countdown">
+                <div class="cd-box"><span id="d">0</span><small>Hari</small></div>
+                <div class="cd-box"><span id="h">0</span><small>Jam</small></div>
+                <div class="cd-box"><span id="m">0</span><small>Menit</small></div>
+                <div class="cd-box"><span id="s">0</span><small>Detik</small></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- PROFIL BKM A J -->
+        <section>
+            <h2 class="section-title">Profil Organisasi</h2>
+            <div class="card">
+                <div class="logo-wrapper">
+                    <img id="bkm-logo" src="https://cdn-icons-png.flaticon.com/512/2316/2316993.png" alt="Logo BKM" class="logo-img">
+                    <button class="edit-overlay" onclick="triggerUpload('logo-upload')" title="Ganti Logo">
+                        <i class="ph ph-camera"></i>
+                    </button>
+                    <input type="file" id="logo-upload" hidden accept="image/*" onchange="updateLogo(this)">
+                </div>
+                <h3 id="bkm-name" style="font-size: 2rem; color: var(--primary); margin-bottom: 10px;">BKM Al Jihad</h3>
+                <div style="position: relative; display: inline-block; max-width: 600px;">
+                    <p id="bkm-desc" style="color: #666; line-height: 1.6;">
+                        Badan Kemakmuran Musholla Al Jihad berdedikasi untuk memakmurkan musholla dan membina generasi muda melalui kegiatan keagamaan dan sosial. Kami terbuka untuk kolaborasi.
+                    </p>
+                    <button onclick="editBKMInfo()" style="position: absolute; top: 0; right: -30px; background:none; border:none; cursor:pointer; color:#999;"><i class="ph ph-pencil-simple"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PEMBINA -->
+        <section>
+            <h2 class="section-title">Pembina Kami</h2>
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <div style="position: relative; display: inline-block;">
+                    <img id="mentor-photo" src="https://picsum.photos/seed/khairi/300/300" alt="Pembina" class="mentor-img">
+                    <button class="edit-overlay" onclick="triggerUpload('mentor-upload')" style="bottom: 10px; right: 10px;" title="Ganti Foto">
+                        <i class="ph ph-camera"></i>
+                    </button>
+                    <input type="file" id="mentor-upload" hidden accept="image/*" onchange="updateMentorPhoto(this)">
+                </div>
+                <span class="mentor-role">Pembina Utama</span>
+                <h3 id="mentor-name" style="font-size: 2rem; margin-bottom: 10px;">Khairi Fadli Winata</h3>
+                <p style="color: #666; font-style: italic;">"Mari kita jadikan 1 Muharram sebagai tonggak perubahan menuju pribadi yang lebih baik."</p>
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-outline" onclick="editMentorName()">Ganti Nama Pembina</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- REMAJA AL JIHAD (RAJ) -->
+        <section style="background: #ecfdf5; border-radius: var(--radius); padding: 40px;">
+            <div class="flex justify-between items-center mb-4">
+                <h2 style="font-size: 1.8rem; color: var(--primary-dark);">Anggota RAJ (Remaja Al Jihad)</h2>
+                <button onclick="openMemberModal()" class="btn btn-primary"><i class="ph ph-plus"></i> Tambah Anggota</button>
+            </div>
+            
+            <div class="raj-grid" id="raj-grid">
+                <!-- Anggota akan di-render oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- CHECK-IN & DAFTAR HADIR -->
+        <section id="checkin">
+            <h2 class="section-title">Check-in Tamu & Undangan</h2>
+            <p class="text-center mb-4">Silakan isi data kehadiran Anda di sini.</p>
+
+            <div class="checkin-section">
+                <form id="checkin-form" onsubmit="handleCheckIn(event)">
+                    <div class="form-grid">
+                        <div>
+                            <label style="display:block; margin-bottom:5px; font-weight:600;">Nama Lengkap</label>
+                            <input type="text" id="guest-name" class="form-input" placeholder="Contoh: Ahmad Fauzi" required>
+                        </div>
+                        <div>
+                            <label style="display:block; margin-bottom:5px; font-weight:600;">Asal Masjid / Musholla</label>
+                            <input type="text" id="guest-origin" class="form-input" placeholder="Contoh: Masjid Al Hafidz" required>
+                        </div>
+                        <div>
+                            <label style="display:block; margin-bottom:5px; font-weight:600;">Peran (Sebagai Apa)</label>
+                            <select id="guest-role" class="form-input">
+                                <option value="Remaja Masjid">Remaja Masjid</option>
+                                <option value="Jamaah">Jamaah</option>
+                                <option value="Pembina">Pembina</option>
+                                <option value="Tamu Undangan">Tamu Undangan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full" style="justify-content: center; width: 100%;">
+                        <i class="ph ph-check-circle"></i> HADIR / CHECK-IN
+                    </button>
+                </form>
+
+                <h3 style="margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">Tamu yang Sudah Hadir:</h3>
+                <div id="guest-list" class="guest-list">
+                    <!-- Daftar tamu akan muncul di sini -->
+                    <p class="text-center" style="padding: 20px; color: #999;">Belum ada data tamu.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Panitia 1 Muharram - BKM A J & Anggota RAJ</p>
+        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 5px;">Musholla Al Jihad</p>
+    </footer>
+
+    <!-- MODAL TAMBAH/EDIT ANGGOTA -->
+    <div id="member-modal" class="modal">
+        <div class="modal-content">
+            <h3 class="mb-4">Data Anggota RAJ</h3>
+            <input type="hidden" id="edit-id">
+            <div class="mb-4">
+                <label style="font-weight:600; font-size:0.9rem;">Nama Lengkap</label>
+                <input type="text" id="member-name" class="form-input">
+            </div>
+            <div class="mb-4">
+                <label style="font-weight:600; font-size:0.9rem;">Jabatan / Status</label>
+                <input type="text" id="member-role" class="form-input" placeholder="Contoh: Ketua, Anggota, Sekretaris">
+            </div>
+            <div class="mb-4">
+                <label style="font-weight:600; font-size:0.9rem;">Foto Profil</label>
+                <input type="file" id="member-photo" class="form-input" accept="image/*">
+            </div>
+            <div class="flex justify-between">
+                <button onclick="closeModal('member-modal')" class="btn btn-outline">Batal</button>
+                <button onclick="saveMember()" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDIT INFO UMUM -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Informasi</h3>
+            <div class="mb-4 mt-4">
+                <label style="font-weight:600; font-size:0.9rem;">Nama</label>
+                <input type="text" id="info-name" class="form-input">
+            </div>
+            <div class="mb-4">
+                <label style="font-weight:600; font-size:0.9rem;">Deskripsi</label>
+                <textarea id="info-desc" class="form-input" rows="3"></textarea>
+            </div>
+            <div class="flex justify-between">
+                <button onclick="closeModal('info-modal')" class="btn btn-outline">Batal</button>
+                <button onclick="saveInfo()" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA & STATE MANAGEMENT ---
+        // Data awal (Default) jika belum ada di LocalStorage
+        const defaultData = {
+            bkm: {
+                name: "BKM Al Jihad",
+                desc: "Badan Kemakmuran Musholla Al Jihad berdedikasi untuk memakmurkan musholla dan membina generasi muda melalui kegiatan keagamaan dan sosial.",
+                logo: "https://cdn-icons-png.flaticon.com/512/2316/2316993.png"
+            },
+            mentor: {
+                name: "Khairi Fadli Winata",
+                photo: "https://picsum.photos/seed/khairi/300/300"
+            },
+            rajMembers: [
+                { id: 1, name: "Siti Aminah", role: "Sekretaris", photo: "https://picsum.photos/seed/siti/200/200" },
+                { id: 2, name: "Rizky Pratama", role: "Bendahara", photo: "https://picsum.photos/seed/rizky/200/200" },
+                { id: 3, name: "Ahmad Dani", role: "Ketua Remaja", photo: "https://picsum.photos/seed/dani/200/200" },
+                { id: 4, name: "Dewi Sartika", role: "Koordinator Acara", photo: "https://picsum.photos/seed/dewi/200/200" }
+            ],
+            guests: [] // Menyimpan data tamu yang check-in
+        };
+
+        // Load data dari LocalStorage atau gunakan default
+        let appData = JSON.parse(localStorage.getItem('muharramApp_V3')) || defaultData;
+
+        // Fungsi Simpan Data
+        function saveAppData() {
+            localStorage.setItem('muharramApp_V3', JSON.stringify(appData));
+            renderAll();
+        }
+
+        // --- RENDER FUNCTIONS ---
+        function renderAll() {
+            renderBKM();
+            renderMentor();
+            renderRAJ();
+            renderGuests();
+        }
+
+        function renderBKM() {
+            document.getElementById('bkm-name').innerText = appData.bkm.name;
+            document.getElementById('bkm-desc').innerText = appData.bkm.desc;
+            document.getElementById('bkm-logo').src = appData.bkm.logo;
+        }
+
+        function renderMentor() {
+            document.getElementById('mentor-name').innerText = appData.mentor.name;
+            document.getElementById('mentor-photo').src = appData.mentor.photo;
+        }
+
+        function renderRAJ() {
+            const grid = document.getElementById('raj-grid');
+            grid.innerHTML = '';
+            appData.rajMembers.forEach(m => {
+                const div = document.createElement('div');
+                div.className = 'member-card';
+                div.innerHTML = `
+                    <div class="card-actions">
+                        <button class="icon-btn" onclick="editMember(${m.id})"><i class="ph ph-pencil-simple"></i></button>
+                        <button class="icon-btn del" onclick="deleteMember(${m.id})"><i class="ph ph-trash"></i></button>
+                    </div>
+                    <img src="${m.photo}" class="member-avatar">
+                    <span class="member-badge">${m.role}</span>
+                    <h4 style="margin-top:10px;">${m.name}</h4>
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+        function renderGuests() {
+            const list = document.getElementById('guest-list');
+            list.innerHTML = '';
+            
+            if (appData.guests.length === 0) {
+                list.innerHTML = '<p class="text-center" style="padding: 20px; color: #999;">Belum ada data tamu.</p>';
+                return;
+            }
+
+            appData.guests.forEach(g => {
+                let badgeClass = 'bg-tamu';
+                if(g.role === 'Remaja Masjid') badgeClass = 'bg-remaja';
+                if(g.role === 'Jamaah') badgeClass = 'bg-jamaah';
+
+                const div = document.createElement('div');
+                div.className = 'guest-item';
+                div.innerHTML = `
+                    <div class="guest-info">
+                        <strong>${g.name}</strong>
+                        <div class="guest-meta">${g.origin}</div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="guest-badge ${badgeClass}">${g.role}</span>
+                        <span style="font-size:0.8rem; color:#999;">${g.time}</span>
+                        <button onclick="deleteGuest(${g.id})" style="color:red; background:none; border:none; cursor:pointer;"><i class="ph ph-trash"></i></button>
+                    </div>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        // --- LOGIC: BKM & MENTOR ---
+        function updateLogo(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    appData.bkm.logo = e.target.result;
+                    saveAppData();
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function editBKMInfo() {
+            document.getElementById('info-name').value = appData.bkm.name;
+            document.getElementById('info-desc').value = appData.bkm.desc;
+            document.getElementById('info-modal').style.display = 'flex';
+        }
+
+        function updateMentorPhoto(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    appData.mentor.photo = e.target.result;
+                    saveAppData();
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function editMentorName() {
+            const newName = prompt("Masukkan Nama Pembina Baru:", appData.mentor.name);
+            if(newName && newName.trim() !== "") {
+                appData.mentor.name = newName;
+                saveAppData();
+            }
+        }
+
+        function saveInfo() {
+            appData.bkm.name = document.getElementById('info-name').value;
+            appData.bkm.desc = document.getElementById('info-desc').value;
+            saveAppData();
+            closeModal('info-modal');
+        }
+
+        // --- LOGIC: RAJ MEMBERS ---
+        function openMemberModal(id = null) {
+            const modal = document.getElementById('member-modal');
+            document.getElementById('edit-id').value = id || '';
+            const nameIn = document.getElementById('member-name');
+            const roleIn = document.getElementById('member-role');
+            const photoIn = document.getElementById('member-photo');
+
+            if (id) {
+                const m = appData.rajMembers.find(x => x.id === id);
+                nameIn.value = m.name;
+                roleIn.value = m.role;
+                photoIn.value = ""; 
+            } else {
+                nameIn.value = "";
+                roleIn.value = "";
+                photoIn.value = "";
+            }
+            modal.style.display = 'flex';
+        }
+
+        function saveMember() {
+            const id = document.getElementById('edit-id').value;
+            const name = document.getElementById('member-name').value;
+            const role = document.getElementById('member-role').value;
+            const file = document.getElementById('member-photo').files[0];
+
+            if(!name) { alert("Nama harus diisi!"); return; }
+
+            if (id) {
+                // Edit
+                const m = appData.rajMembers.find(x => x.id == id);
+                m.name = name;
+                m.role = role;
+                if(file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => { m.photo = e.target.result; saveAppData(); closeModal('member-modal'); };
+                    reader.readAsDataURL(file);
+                    return;
+                }
+            } else {
+                // Add New
+                const newId = Date.now();
+                let photoUrl = `https://picsum.photos/seed/${newId}/200/200`;
+                const newMember = { id: newId, name, role, photo: photoUrl };
+                
+                if(file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => { 
+                        newMember.photo = e.target.result; 
+                        appData.rajMembers.push(newMember); 
+                        saveAppData(); 
+                        closeModal('member-modal');
+                    };
+                    reader.readAsDataURL(file);
+                    return;
+                }
+                appData.rajMembers.push(newMember);
+            }
+            saveAppData();
+            closeModal('member-modal');
+        }
+
+        function editMember(id) { openMemberModal(id); }
+        function deleteMember(id) {
+            if(confirm("Hapus anggota ini?")) {
+                appData.rajMembers = appData.rajMembers.filter(m => m.id !== id);
+                saveAppData();
+            }
+        }
+
+        // --- LOGIC: CHECK-IN GUESTS ---
+        function handleCheckIn(e) {
+            e.preventDefault();
+            const name = document.getElementById('guest-name').value;
+            const origin = document.getElementById('guest-origin').value;
+            const role = document.getElementById('guest-role').value;
+            
+            const now = new Date();
+            const timeString = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+
+            appData.guests.unshift({
+                id: Date.now(),
+                name,
+                origin,
+                role,
+                time: timeString
+            });
+
+            document.getElementById('checkin-form').reset();
+            saveAppData();
+            
+            // Efek visual (scroll ke daftar)
+            document.getElementById('guest-list').scrollTop = 0;
+        }
+
+        function deleteGuest(id) {
+            if(confirm("Hapus data tamu ini?")) {
+                appData.guests = appData.guests.filter(g => g.id !== id);
+                saveAppData();
+            }
+        }
+
+        // --- UTILS ---
+        function triggerUpload(id) { document.getElementById(id).click(); }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+        
+        window.onclick = function(e) {
+            if(e.target.classList.contains('modal')) e.target.style.display = 'none';
+        }
+
+        // --- COUNTDOWN ---
+        const targetDate = new Date("June 28, 2026 00:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const dist = targetDate - now;
+            if(dist > 0) {
+                document.getElementById('d').innerText = Math.floor(dist / (1000*60*60*24));
+                document.getElementById('h').innerText = Math.floor((dist % (1000*60*60*24)) / (1000*60*60));
+                document.getElementById('m').innerText = Math.floor((dist % (1000*60*60)) / (1000*60));
+                document.getElementById('s').innerText = Math.floor((dist % (1000*60)) / 1000);
+            }
+        }, 1000);
+
+        // Init
+        renderAll();
+
+    </script>
+</body>
+</html>

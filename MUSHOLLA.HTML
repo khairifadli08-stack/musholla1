@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Muharram 1448 H - Musholla Al Jihad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary: #047857;
+            --primary-dark: #064e3b;
+            --accent: #d97706;
+            --bg-light: #f3f4f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --danger: #dc2626;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Poppins',sans-serif;background:var(--bg-light);color:var(--text-dark);}
+        h1,h2,h3{font-family:'Amiri',serif;}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px;}
+        .flex{display:flex;}.items-center{align-items:center;}.justify-between{justify-content:space-between;}
+        .gap-4{gap:1rem;}.mt-4{margin-top:1rem;}.mb-4{margin-bottom:1rem;}.text-center{text-align:center;}
+
+        .btn{padding:10px 20px;border-radius:8px;border:none;cursor:pointer;font-weight:500;transition:0.2s;display:inline-flex;align-items:center;gap:8px;font-size:0.9rem;text-decoration:none;font-family:inherit;}
+        .btn-primary{background:var(--primary);color:white;}.btn-primary:hover{background:var(--primary-dark);}
+        .btn-accent{background:var(--accent);color:white;}.btn-accent:hover{background:#b45309;}
+        .btn-danger{background:var(--danger);color:white;}
+        .btn-outline{border:1px solid var(--primary);color:var(--primary);background:transparent;}.btn-outline:hover{background:var(--primary);color:white;}
+        .btn-sm{padding:6px 14px;font-size:0.8rem;}
+
+        nav{background:var(--white);padding:15px 0;box-shadow:var(--shadow);position:sticky;top:0;z-index:100;}
+        .nav-content{display:flex;justify-content:space-between;align-items:center;}
+        .brand{font-size:1.5rem;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:10px;}
+
+        header{background:linear-gradient(rgba(6,78,59,0.85),rgba(6,78,59,0.95)),url('https://picsum.photos/seed/mosque_arch/1920/1080');background-size:cover;background-position:center;color:white;padding:80px 0 60px;text-align:center;position:relative;}
+        .date-badge{background:var(--accent);padding:5px 15px;border-radius:20px;font-weight:bold;font-size:0.9rem;margin-bottom:15px;display:inline-block;}
+        .countdown{display:flex;justify-content:center;gap:15px;margin-top:30px;}
+        .cd-box{background:rgba(255,255,255,0.15);backdrop-filter:blur(5px);padding:15px;border-radius:8px;min-width:80px;border:1px solid rgba(255,255,255,0.3);}
+        .cd-box span{font-size:2rem;font-weight:700;display:block;}
+        .hero-location{margin-top:25px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);backdrop-filter:blur(5px);padding:10px 20px;border-radius:30px;border:1px solid rgba(255,255,255,0.3);color:white;text-decoration:none;transition:background 0.2s;}
+        .hero-location:hover{background:rgba(255,255,255,0.25);}
+
+        section{padding:60px 0;}
+        .section-title{text-align:center;margin-bottom:40px;color:var(--primary-dark);font-size:2.2rem;}
+
+        .card{background:var(--white);padding:30px;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;position:relative;transition:transform 0.2s;}
+        .card:hover{transform:translateY(-3px);}
+
+        .logo-wrapper{width:120px;height:120px;margin:0 auto 20px;}
+        .logo-img{width:100%;height:100%;object-fit:contain;border-radius:50%;border:3px solid var(--accent);padding:5px;background:white;}
+
+        .edit-overlay{position:absolute;bottom:5px;right:5px;background:var(--primary);color:white;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;border:2px solid white;font-size:0.85rem;transition:background 0.2s;}
+        .edit-overlay:hover{background:var(--accent);}
+
+        .location-card{background:var(--white);border-radius:var(--radius);padding:20px 25px;box-shadow:var(--shadow);margin-top:25px;display:flex;align-items:center;gap:15px;text-align:left;transition:transform 0.2s;text-decoration:none;color:inherit;}
+        .location-card:hover{transform:translateY(-2px);}
+        .location-icon-box{width:50px;height:50px;min-width:50px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;color:white;font-size:1.4rem;}
+        .location-info{flex:1;}
+        .location-info strong{display:block;color:var(--text-dark);margin-bottom:3px;font-size:1rem;}
+        .location-info p{color:var(--text-light);font-size:0.85rem;line-height:1.4;}
+        .location-link{color:var(--primary);font-weight:600;font-size:0.85rem;display:inline-flex;align-items:center;gap:4px;text-decoration:none;margin-top:4px;transition:color 0.2s;}
+        .location-link:hover{color:var(--accent);}
+
+        .mentor-img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:5px solid var(--accent);margin-bottom:20px;}
+
+        .undangan-section{background:linear-gradient(135deg,#064e3b,#047857);border-radius:var(--radius);padding:50px 30px;color:white;position:relative;overflow:hidden;}
+        .undangan-section::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.04);}
+        .undangan-section::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.03);}
+        .undangan-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:30px;align-items:center;position:relative;z-index:1;}
+        .undangan-arrow{font-size:2.5rem;opacity:0.5;text-align:center;}
+        .undangan-person{text-align:center;}
+        .undangan-photo-wrapper{position:relative;width:160px;height:160px;margin:0 auto 20px;}
+        .undangan-photo{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--accent);box-shadow:0 8px 25px rgba(0,0,0,0.3);}
+        .undangan-name{font-family:'Amiri',serif;font-size:1.6rem;margin-bottom:4px;}
+        .undangan-title{color:var(--accent);font-weight:600;font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+        .undangan-desc{font-size:0.9rem;opacity:0.9;line-height:1.6;max-width:320px;margin:0 auto;font-style:italic;}
+        .undangan-badge{display:inline-block;background:var(--accent);color:white;padding:6px 18px;border-radius:20px;font-weight:600;font-size:0.85rem;margin-top:15px;}
+        .edit-text-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:0.75rem;margin-top:10px;transition:0.2s;font-family:inherit;}
+        .edit-text-btn:hover{background:rgba(255,255,255,0.3);}
+
+        .pesantren-card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;min-height:200px;transition:transform 0.2s;position:relative;}
+        .pesantren-card:hover{transform:translateY(-3px);}
+        .pesantren-img-wrap{width:280px;min-width:280px;position:relative;overflow:hidden;}
+        .pesantren-img{width:100%;height:100%;object-fit:cover;min-height:200px;}
+        .pesantren-body{flex:1;padding:30px;display:flex;flex-direction:column;justify-content:center;position:relative;}
+        .pesantren-name{font-family:'Amiri',serif;font-size:1.8rem;color:var(--primary-dark);margin-bottom:10px;}
+        .pesantren-desc{color:var(--text-light);line-height:1.7;font-size:0.95rem;}
+        .pesantren-badge{display:inline-flex;align-items:center;gap:6px;background:#ecfdf5;color:var(--primary);padding:5px 14px;border-radius:20px;font-size:0.8rem;font-weight:600;margin-top:15px;width:fit-content;}
+
+        .raj-section{background:#ecfdf5;border-radius:var(--radius);padding:40px;}
+        .raj-banner-wrapper{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:transform 0.2s;}
+        .raj-banner-wrapper:hover{transform:translateY(-3px);}
+        .raj-banner-wrapper:hover .raj-banner-overlay{opacity:1;}
+        .raj-banner{width:100%;display:block;max-height:600px;object-fit:cover;}
+        .raj-banner-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;gap:10px;}
+        .raj-banner-overlay i{font-size:2.5rem;color:white;}
+        .raj-banner-overlay span{color:white;font-weight:600;font-size:0.95rem;}
+        .raj-caption{text-align:center;margin-top:20px;color:var(--primary-dark);font-size:1.1rem;font-style:italic;}
+        .raj-edit-row{display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap;}
+
+        .checkin-section{background:white;border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);border-top:5px solid var(--accent);}
+        .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-bottom:20px;}
+        .form-input{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;outline:none;font-family:inherit;}
+        .form-input:focus{border-color:var(--primary);}
+
+        .guest-group{margin-top:25px;border:1px solid #eee;border-radius:var(--radius);overflow:hidden;}
+        .guest-group-header{padding:14px 20px;font-weight:700;font-size:0.95rem;display:flex;align-items:center;gap:10px;border-bottom:1px solid #eee;}
+        .guest-group-header .count{background:rgba(0,0,0,0.08);padding:2px 10px;border-radius:12px;font-size:0.8rem;font-weight:600;color:#666;}
+        .gg-ustadz{background:#ede9fe;color:#5b21b6;border-color:#ddd6fe;}
+        .gg-ustadz .count{background:#ede9fe;color:#5b21b6;}
+        .gg-remaja{background:#dbeafe;color:#1e40af;border-color:#bfdbfe;}
+        .gg-remaja .count{background:#dbeafe;color:#1e40af;}
+        .gg-jamaah{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+        .gg-jamaah .count{background:#dcfce7;color:#166534;}
+        .gg-pembina{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+        .gg-pembina .count{background:#fef3c7;color:#92400e;}
+        .gg-tamu{background:#fce7f3;color:#9d174d;border-color:#fbcfe8;}
+        .gg-tamu .count{background:#fce7f3;color:#9d174d;}
+
+        .guest-item{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid #f9fafb;background:white;animation:fadeIn 0.4s;transition:background 0.15s;}
+        .guest-item:last-child{border-bottom:none;}
+        .guest-item:hover{background:#f9fafb;}
+        .guest-info strong{display:block;color:var(--text-dark);font-size:0.9rem;}
+        .guest-meta{font-size:0.8rem;color:var(--text-light);}
+        .guest-time{font-size:0.8rem;color:#999;white-space:nowrap;}
+        .guest-del{background:none;border:none;cursor:pointer;color:#ccc;transition:color 0.2s;padding:4px;}
+        .guest-del:hover{color:var(--danger);}
+
+        .no-guest{text-align:center;padding:40px 20px;color:#aaa;font-style:italic;}
+
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+        .modal-content{background:white;padding:30px;border-radius:var(--radius);width:90%;max-width:480px;animation:slideUp 0.3s;box-shadow:0 20px 25px -5px rgba(0,0,0,0.2);max-height:90vh;overflow-y:auto;}
+        @keyframes slideUp{from{transform:translateY(20px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+        @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+        footer{background:var(--primary-dark);color:white;text-align:center;padding:40px 0;margin-top:60px;}
+        .footer-location{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:8px 18px;background:rgba(255,255,255,0.1);border-radius:20px;color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.85rem;transition:background 0.2s;}
+        .footer-location:hover{background:rgba(255,255,255,0.2);color:white;}
+
+        @media(max-width:768px){
+            .undangan-grid{grid-template-columns:1fr;gap:20px;}
+            .undangan-arrow{transform:rotate(90deg);font-size:2rem;}
+            .pesantren-card{flex-direction:column;}
+            .pesantren-img-wrap{width:100%;min-width:unset;height:180px;}
+            header h1{font-size:2.4rem !important;}
+            .countdown{gap:8px;}
+            .cd-box{min-width:65px;padding:10px;}
+            .cd-box span{font-size:1.5rem;}
+            .undangan-photo-wrapper{width:130px;height:130px;}
+            .undangan-name{font-size:1.3rem;}
+            section{padding:40px 0;}
+            .checkin-section{padding:25px 18px;}
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="container nav-content">
+        <div class="brand">
+            <i class="ph ph-moon-stars" style="font-size:1.8rem;"></i> 1 Muharram
+        </div>
+        <a href="#checkin" class="btn btn-primary">Check-in Sekarang</a>
+    </div>
+</nav>
+
+<header>
+    <div class="container">
+        <div class="date-badge">Selasa Malam Rabu, 30 JUNI 2026</div>
+        <h1 style="font-size:3.5rem;margin-bottom:10px;line-height:1.2;">Musholla Al Jihad</h1>
+        <p style="font-size:1.2rem;opacity:0.9;">Peringatan Tahun Baru Islam 1448 H</p>
+        <p style="margin-top:10px;font-style:italic;opacity:0.8;">"Momentum Hijrah Bersama Anggota RAJ & BKM A J"</p>
+        <a href="https://maps.app.goo.gl/7V6jNZ8kidNW1tpKA" target="_blank" rel="noopener noreferrer" class="hero-location">
+            <i class="ph-fill ph-map-pin" style="font-size:1.2rem;"></i>
+            <span>Lokasi Musholla Al Jihad — Buka di Google Maps</span>
+            <i class="ph ph-arrow-square-out" style="font-size:1rem;opacity:0.7;"></i>
+        </a>
+        <div class="countdown">
+            <div class="cd-box"><span id="d">0</span><small>Hari</small></div>
+            <div class="cd-box"><span id="h">0</span><small>Jam</small></div>
+            <div class="cd-box"><span id="m">0</span><small>Menit</small></div>
+            <div class="cd-box"><span id="s">0</span><small>Detik</small></div>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- PROFIL BKM — TANPA TOMBOL EDIT/HAPUS -->
+    <section>
+        <h2 class="section-title">Profil Organisasi</h2>
+        <div class="card">
+            <div class="logo-wrapper">
+                <img id="bkm-logo" src="https://cdn-icons-png.flaticon.com/512/2316/2316993.png" alt="Logo BKM" class="logo-img">
+            </div>
+            <h3 id="bkm-name" style="font-size:2rem;color:var(--primary);margin-bottom:10px;">BKM Al Jihad</h3>
+            <p id="bkm-desc" style="color:#666;line-height:1.6;max-width:600px;margin:0 auto;">Badan Kemakmuran Musholla Al Jihad berdedikasi untuk memakmurkan musholla dan membina generasi muda melalui kegiatan keagamaan dan sosial.</p>
+            <a href="https://maps.app.goo.gl/7V6jNZ8kidNW1tpKA" target="_blank" rel="noopener noreferrer" class="location-card">
+                <div class="location-icon-box"><i class="ph-fill ph-map-pin"></i></div>
+                <div class="location-info">
+                    <strong>Alamat Musholla Al Jihad</strong>
+                    <p>Klik untuk membuka lokasi tepat musholla di Google Maps.</p>
+                    <span class="location-link">Buka Google Maps <i class="ph ph-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- PEMBINA -->
+    <section>
+        <h2 class="section-title">Pembina Kami</h2>
+        <div class="card" style="max-width:600px;margin:0 auto;">
+            <div style="position:relative;display:inline-block;">
+                <img id="mentor-photo" src="https://picsum.photos/seed/khairi/300/300" alt="Pembina" class="mentor-img">
+                <button class="edit-overlay" onclick="triggerUpload('mentor-upload')" style="bottom:10px;right:10px;" title="Ganti Foto"><i class="ph ph-camera"></i></button>
+                <input type="file" id="mentor-upload" hidden accept="image/*" onchange="updateField(this,'mentor.photo')">
+            </div>
+            <span style="color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:0.9rem;">Pembina Utama</span>
+            <h3 id="mentor-name" style="font-size:2rem;margin-bottom:10px;">Khairi Fadli Winata</h3>
+            <p style="color:#666;font-style:italic;">"Mari kita jadikan 1 Muharram sebagai tonggak perubahan menuju pribadi yang lebih baik."</p>
+            <div style="margin-top:20px;"><button class="btn btn-outline btn-sm" onclick="editMentorName()">Ganti Nama Pembina</button></div>
+        </div>
+    </section>
+
+    <!-- UNDANGAN KHUSUS -->
+    <section>
+        <h2 class="section-title" style="color:white;">Undangan Khusus</h2>
+        <div class="undangan-section">
+            <div class="undangan-grid">
+                <div class="undangan-person">
+                    <div class="undangan-photo-wrapper">
+                        <img id="ustadz-photo" src="https://picsum.photos/seed/ustadzfahmi/300/300" alt="Ustadz Fahmi" class="undangan-photo">
+                        <button class="edit-overlay" onclick="triggerUpload('ustadz-upload')" title="Ganti Foto"><i class="ph ph-camera"></i></button>
+                        <input type="file" id="ustadz-upload" hidden accept="image/*" onchange="updateField(this,'ustadz.photo')">
+                    </div>
+                    <div class="undangan-title">Pengundang</div>
+                    <h3 id="ustadz-name" class="undangan-name">Al-Ustadz Fahmi, S.Pd</h3>
+                    <p id="ustadz-desc" class="undangan-desc">"Dengan penuh rasa hormat, kami turut mengundang Bapak Kepala Desa Hamparan Perak untuk hadir dalam peringatan Tahun Baru Islam 1448 H di Musholla Al Jihad."</p>
+                    <button class="edit-text-btn" onclick="editUstadzInfo()"><i class="ph ph-pencil-simple"></i> Edit Teks</button>
+                </div>
+                <div class="undangan-arrow"><i class="ph ph-arrow-right"></i></div>
+                <div class="undangan-person">
+                    <div class="undangan-photo-wrapper">
+                        <img id="kades-photo" src="https://picsum.photos/seed/muhazir/300/300" alt="Bapak Muhazir" class="undangan-photo">
+                        <button class="edit-overlay" onclick="triggerUpload('kades-upload')" title="Ganti Foto"><i class="ph ph-camera"></i></button>
+                        <input type="file" id="kades-upload" hidden accept="image/*" onchange="updateField(this,'kades.photo')">
+                    </div>
+                    <div class="undangan-title">Turut Diundang</div>
+                    <h3 id="kades-name" class="undangan-name">Bapak Muhazir</h3>
+                    <p id="kades-title" class="undangan-title" style="margin-bottom:12px;">Kepala Desa Hamparan Perak</p>
+                    <p id="kades-desc" class="undangan-desc">Sebagai tamu kehormatan dalam acara Peringatan 1 Muharram 1448 H Musholla Al Jihad.</p>
+                    <span class="undangan-badge"><i class="ph ph-star"></i> Tamu Kehormatan</span>
+                    <br>
+                    <button class="edit-text-btn" onclick="editKadesInfo()"><i class="ph ph-pencil-simple"></i> Edit Teks</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PESANTREN AJYALUL QUR'AN -->
+    <section>
+        <h2 class="section-title">Kolaborasi</h2>
+        <div class="pesantren-card">
+            <div class="pesantren-img-wrap">
+                <img id="pesantren-photo" src="https://picsum.photos/seed/ajyalulquran/600/400" alt="Pesantren Ajyalul Qur'an" class="pesantren-img">
+                <button class="edit-overlay" onclick="triggerUpload('pesantren-upload')" style="bottom:10px;right:10px;" title="Ganti Foto"><i class="ph ph-camera"></i></button>
+                <input type="file" id="pesantren-upload" hidden accept="image/*" onchange="updateField(this,'pesantren.photo')">
+            </div>
+            <div class="pesantren-body">
+                <div class="pesantren-badge"><i class="ph ph-graduation-cap"></i> Mitra Kolaborasi</div>
+                <h3 id="pesantren-name" class="pesantren-name" style="margin-top:10px;">Pesantren Ajyalul Qur'an</h3>
+                <p id="pesantren-desc" class="pesantren-desc">Pesantren Ajyalul Qur'an merupakan mitra kolaborasi dalam penyelenggaraan kegiatan peringatan 1 Muharram 1448 H. Bersama-sama membangun generasi yang cinta Al-Qur'an dan berakhlak mulia.</p>
+                <button class="btn btn-outline btn-sm" onclick="editPesantrenInfo()" style="margin-top:15px;width:fit-content;"><i class="ph ph-pencil-simple"></i> Edit Informasi</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELURUH ANGGOTA RAJ — BANNER FOTO -->
+    <section class="raj-section">
+        <h2 style="font-size:1.8rem;color:var(--primary-dark);text-align:center;margin-bottom:25px;">Seluruh Anggota RAJ (Remaja Al Jihad)</h2>
+        <div class="raj-banner-wrapper" onclick="triggerUpload('raj-banner-upload')">
+            <img id="raj-banner" src="https://z-cdn-media.chatglm.cn/files/6b4bf80a-6391-4cee-b4f4-890381d952fd.jpeg?auth_key=1881867827-9363fd18df814b098e2f1d60524683a6-0-7500ffd4a5da7cc06119773b9bbb42c2" alt="Seluruh Anggota RAJ" class="raj-banner">
+            <div class="raj-banner-overlay">
+                <i class="ph ph-camera"></i>
+                <span>Klik untuk ganti foto banner</span>
+            </div>
+        </div>
+        <input type="file" id="raj-banner-upload" hidden accept="image/*" onchange="updateField(this,'rajBanner')">
+        <p id="raj-caption" class="raj-caption">Kami adalah satu keluarga besar Remaja Musholla Al Jihad</p>
+        <div class="raj-edit-row">
+            <button class="btn btn-outline btn-sm" onclick="editRajCaption()"><i class="ph ph-pencil-simple"></i> Edit Keterangan</button>
+            <button class="btn btn-outline btn-sm" onclick="triggerUpload('raj-banner-upload')"><i class="ph ph-image"></i> Ganti Foto</button>
+        </div>
+    </section>
+
+    <!-- CHECK-IN -->
+    <section id="checkin">
+        <h2 class="section-title">Check-in Tamu & Undangan</h2>
+        <p class="text-center mb-4">Silakan isi data kehadiran Anda di sini.</p>
+        <div class="checkin-section">
+            <form id="checkin-form" onsubmit="handleCheckIn(event)">
+                <div class="form-grid">
+                    <div>
+                        <label style="display:block;margin-bottom:5px;font-weight:600;">Nama Lengkap</label>
+                        <input type="text" id="guest-name" class="form-input" placeholder="Contoh: Ahmad Fauzi" required>
+                    </div>
+                    <div>
+                        <label style="display:block;margin-bottom:5px;font-weight:600;">Asal Masjid / Musholla</label>
+                        <input type="text" id="guest-origin" class="form-input" placeholder="Contoh: Masjid Al Hafidz" required>
+                    </div>
+                    <div>
+                        <label style="display:block;margin-bottom:5px;font-weight:600;">Peran</label>
+                        <select id="guest-role" class="form-input">
+                            <option value="Al-Ustadz">Al-Ustadz</option>
+                            <option value="Remaja Masjid">Remaja Masjid</option>
+                            <option value="Jamaah">Jamaah</option>
+                            <option value="Pembina">Pembina</option>
+                            <option value="Tamu Undangan">Tamu Undangan</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="justify-content:center;width:100%;"><i class="ph ph-check-circle"></i> HADIR / CHECK-IN</button>
+            </form>
+
+            <div id="guest-grouped"></div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Panitia 1 Muharram - BKM A J & Anggota RAJ</p>
+    <p style="font-size:0.8rem;opacity:0.7;margin-top:5px;">Musholla Al Jihad</p>
+    <a href="https://maps.app.goo.gl/7V6jNZ8kidNW1tpKA" target="_blank" rel="noopener noreferrer" class="footer-location">
+        <i class="ph-fill ph-map-pin"></i> Lihat Lokasi di Google Maps <i class="ph ph-arrow-square-out" style="font-size:0.75rem;opacity:0.6;"></i>
+    </a>
+</footer>
+
+<!-- MODAL: USTADZ -->
+<div id="ustadz-modal" class="modal">
+    <div class="modal-content">
+        <h3>Edit Data Ustadz</h3>
+        <div class="mb-4 mt-4"><label style="font-weight:600;font-size:0.9rem;">Nama</label><input type="text" id="ustadz-input-name" class="form-input"></div>
+        <div class="mb-4"><label style="font-weight:600;font-size:0.9rem;">Kata-kata / Deskripsi</label><textarea id="ustadz-input-desc" class="form-input" rows="4"></textarea></div>
+        <div class="flex justify-between"><button onclick="closeModal('ustadz-modal')" class="btn btn-outline">Batal</button><button onclick="saveUstadzInfo()" class="btn btn-primary">Simpan</button></div>
+    </div>
+</div>
+
+<!-- MODAL: KADES -->
+<div id="kades-modal" class="modal">
+    <div class="modal-content">
+        <h3>Edit Data Kepala Desa</h3>
+        <div class="mb-4 mt-4"><label style="font-weight:600;font-size:0.9rem;">Nama</label><input type="text" id="kades-input-name" class="form-input"></div>
+        <div class="mb-4"><label style="font-weight:600;font-size:0.9rem;">Jabatan</label><input type="text" id="kades-input-title" class="form-input"></div>
+        <div class="mb-4"><label style="font-weight:600;font-size:0.9rem;">Deskripsi</label><textarea id="kades-input-desc" class="form-input" rows="3"></textarea></div>
+        <div class="flex justify-between"><button onclick="closeModal('kades-modal')" class="btn btn-outline">Batal</button><button onclick="saveKadesInfo()" class="btn btn-primary">Simpan</button></div>
+    </div>
+</div>
+
+<!-- MODAL: PESANTREN -->
+<div id="pesantren-modal" class="modal">
+    <div class="modal-content">
+        <h3>Edit Informasi Pesantren</h3>
+        <div class="mb-4 mt-4"><label style="font-weight:600;font-size:0.9rem;">Nama Pesantren</label><input type="text" id="pesantren-input-name" class="form-input"></div>
+        <div class="mb-4"><label style="font-weight:600;font-size:0.9rem;">Deskripsi</label><textarea id="pesantren-input-desc" class="form-input" rows="4"></textarea></div>
+        <div class="flex justify-between"><button onclick="closeModal('pesantren-modal')" class="btn btn-outline">Batal</button><button onclick="savePesantrenInfo()" class="btn btn-primary">Simpan</button></div>
+    </div>
+</div>
+
+<!-- MODAL: RAJ CAPTION -->
+<div id="raj-caption-modal" class="modal">
+    <div class="modal-content" style="max-width:420px;">
+        <h3>Edit Keterangan Foto RAJ</h3>
+        <div class="mb-4 mt-4"><label style="font-weight:600;font-size:0.9rem;">Keterangan</label><textarea id="raj-caption-input" class="form-input" rows="3"></textarea></div>
+        <div class="flex justify-between"><button onclick="closeModal('raj-caption-modal')" class="btn btn-outline">Batal</button><button onclick="saveRajCaption()" class="btn btn-primary">Simpan</button></div>
+    </div>
+</div>
+
+<script>
+// =============================================
+// DEFAULT DATA
+// =============================================
+const defaultData = {
+    bkm: {
+        name: "BKM Al Jihad",
+        desc: "Badan Kemakmuran Musholla Al Jihad berdedikasi untuk memakmurkan musholla dan membina generasi muda melalui kegiatan keagamaan dan sosial.",
+        logo: "https://cdn-icons-png.flaticon.com/512/2316/2316993.png"
+    },
+    mentor: {
+        name: "Khairi Fadli Winata",
+        photo: "https://picsum.photos/seed/khairi/300/300"
+    },
+    ustadz: {
+        name: "Al-Ustadz Fahmi, S.Pd",
+        photo: "https://picsum.photos/seed/ustadzfahmi/300/300",
+        desc: "\"Dengan penuh rasa hormat, kami turut mengundang Bapak Kepala Desa Hamparan Perak untuk hadir dalam peringatan Tahun Baru Islam 1448 H di Musholla Al Jihad.\""
+    },
+    kades: {
+        name: "Bapak Muhazir",
+        title: "Kepala Desa Hamparan Perak",
+        photo: "https://picsum.photos/seed/muhazir/300/300",
+        desc: "Sebagai tamu kehormatan dalam acara Peringatan 1 Muharram 1448 H Musholla Al Jihad."
+    },
+    pesantren: {
+        name: "Pesantren Ajyalul Qur'an",
+        photo: "https://picsum.photos/seed/ajyalulquran/600/400",
+        desc: "Pesantren Ajyalul Qur'an merupakan mitra kolaborasi dalam penyelenggaraan kegiatan peringatan 1 Muharram 1448 H. Bersama-sama membangun generasi yang cinta Al-Qur'an dan berakhlak mulia."
+    },
+    rajBanner: "https://z-cdn-media.chatglm.cn/files/6b4bf80a-6391-4cee-b4f4-890381d952fd.jpeg?auth_key=1881867827-9363fd18df814b098e2f1d60524683a6-0-7500ffd4a5da7cc06119773b9bbb42c2",
+    rajCaption: "Kami adalah satu keluarga besar Remaja Musholla Al Jihad",
+    guests: []
+};
+
+let appData = JSON.parse(localStorage.getItem('muharramApp_V5')) || JSON.parse(JSON.stringify(defaultData));
+
+function save() { localStorage.setItem('muharramApp_V5', JSON.stringify(appData)); renderAll(); }
+
+// =============================================
+// HELPER
+// =============================================
+function setNested(obj, path, val) {
+    const keys = path.split('.');
+    let cur = obj;
+    for (let i = 0; i < keys.length - 1; i++) cur = cur[keys[i]];
+    cur[keys[keys.length - 1]] = val;
+}
+
+function updateField(input, key) {
+    if (input.files && input.files[0]) {
+        const r = new FileReader();
+        r.onload = e => { setNested(appData, key, e.target.result); save(); };
+        r.readAsDataURL(input.files[0]);
+    }
+}
+
+// =============================================
+// RENDER
+// =============================================
+function renderAll() {
+    document.getElementById('bkm-name').innerText = appData.bkm.name;
+    document.getElementById('bkm-desc').innerText = appData.bkm.desc;
+    document.getElementById('bkm-logo').src = appData.bkm.logo;
+    document.getElementById('mentor-name').innerText = appData.mentor.name;
+    document.getElementById('mentor-photo').src = appData.mentor.photo;
+    document.getElementById('ustadz-name').innerText = appData.ustadz.name;
+    document.getElementById('ustadz-photo').src = appData.ustadz.photo;
+    document.getElementById('ustadz-desc').innerText = appData.ustadz.desc;
+    document.getElementById('kades-name').innerText = appData.kades.name;
+    document.getElementById('kades-title').innerText = appData.kades.title;
+    document.getElementById('kades-photo').src = appData.kades.photo;
+    document.getElementById('kades-desc').innerText = appData.kades.desc;
+    document.getElementById('pesantren-name').innerText = appData.pesantren.name;
+    document.getElementById('pesantren-photo').src = appData.pesantren.photo;
+    document.getElementById('pesantren-desc').innerText = appData.pesantren.desc;
+    document.getElementById('raj-banner').src = appData.rajBanner;
+    document.getElementById('raj-caption').innerText = appData.rajCaption;
+    renderGuests();
+}
+
+// =============================================
+// GUEST LIST — DIPISAH PER PERAN
+// =============================================
+const roleConfig = {
+    'Al-Ustadz':      { label: 'Al-Ustadz',          icon: 'ph ph-graduation-cap',  css: 'gg-ustadz', order: 1 },
+    'Pembina':        { label: 'Pembina',             icon: 'ph ph-user-circle',    css: 'gg-pembina', order: 2 },
+    'Remaja Masjid':  { label: 'Remaja Masjid',       icon: 'ph ph-users-three',    css: 'gg-remaja',  order: 3 },
+    'Jamaah':         { label: 'Jamaah',              icon: 'ph ph-users',          css: 'gg-jamaah',  order: 4 },
+    'Tamu Undangan':  { label: 'Tamu Undangan',       icon: 'ph ph-envelope-simple', css: 'gg-tamu',   order: 5 }
+};
+
+function renderGuests() {
+    const container = document.getElementById('guest-grouped');
+    container.innerHTML = '';
+    if (appData.guests.length === 0) {
+        container.innerHTML = '<p class="no-guest">Belum ada data tamu yang hadir.</p>';
+        return;
+    }
+    const groups = {};
+    Object.keys(roleConfig).forEach(r => groups[r] = []);
+    appData.guests.forEach(g => {
+        if (!groups[g.role]) groups[g.role] = [];
+        groups[g.role].push(g);
+    });
+    Object.keys(roleConfig).forEach(role => {
+        const list = groups[role];
+        if (!list || list.length === 0) return;
+        const cfg = roleConfig[role];
+        let html = `<div class="guest-group"><div class="guest-group-header ${cfg.css}"><i class="${cfg.icon}"></i> ${cfg.label}<span class="count">${list.length} orang</span></div>`;
+        list.forEach(g => {
+            html += `<div class="guest-item"><div class="guest-info"><strong>${g.name}</strong><div class="guest-meta">${g.origin}</div></div><div class="flex items-center" style="gap:12px;"><span class="guest-time">${g.time}</span><button class="guest-del" onclick="deleteGuest(${g.id})" title="Hapus"><i class="ph ph-trash"></i></button></div></div>`;
+        });
+        html += '</div>';
+        container.innerHTML += html;
+    });
+    const knownRoles = Object.keys(roleConfig);
+    const extra = appData.guests.filter(g => !knownRoles.includes(g.role));
+    if (extra.length > 0) {
+        let html = `<div class="guest-group"><div class="guest-group-header gg-tamu"><i class="ph ph-users"></i> Lainnya<span class="count">${extra.length} orang</span></div>`;
+        extra.forEach(g => {
+            html += `<div class="guest-item"><div class="guest-info"><strong>${g.name}</strong><div class="guest-meta">${g.origin} (${g.role})</div></div><div class="flex items-center" style="gap:12px;"><span class="guest-time">${g.time}</span><button class="guest-del" onclick="deleteGuest(${g.id})" title="Hapus"><i class="ph ph-trash"></i></button></div></div>`;
+        });
+        html += '</div>';
+        container.innerHTML += html;
+    }
+}
+
+// =============================================
+// CHECK-IN
+// =============================================
+function handleCheckIn(e) {
+    e.preventDefault();
+    const name = document.getElementById('guest-name').value.trim();
+    const origin = document.getElementById('guest-origin').value.trim();
+    const role = document.getElementById('guest-role').value;
+    const now = new Date();
+    appData.guests.unshift({
+        id: Date.now(), name, origin, role,
+        time: now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0')
+    });
+    document.getElementById('checkin-form').reset();
+    save();
+}
+
+function deleteGuest(id) {
+    if (confirm("Hapus data tamu ini?")) { appData.guests = appData.guests.filter(g => g.id !== id); save(); }
+}
+
+// =============================================
+// EDIT FUNCTIONS (BUKAN BKM)
+// =============================================
+function editMentorName() {
+    const n = prompt("Masukkan Nama Pembina Baru:", appData.mentor.name);
+    if (n && n.trim()) { appData.mentor.name = n.trim(); save(); }
+}
+function editUstadzInfo() {
+    document.getElementById('ustadz-input-name').value = appData.ustadz.name;
+    document.getElementById('ustadz-input-desc').value = appData.ustadz.desc;
+    document.getElementById('ustadz-modal').style.display = 'flex';
+}
+function saveUstadzInfo() {
+    appData.ustadz.name = document.getElementById('ustadz-input-name').value;
+    appData.ustadz.desc = document.getElementById('ustadz-input-desc').value;
+    save(); closeModal('ustadz-modal');
+}
+function editKadesInfo() {
+    document.getElementById('kades-input-name').value = appData.kades.name;
+    document.getElementById('kades-input-title').value = appData.kades.title;
+    document.getElementById('kades-input-desc').value = appData.kades.desc;
+    document.getElementById('kades-modal').style.display = 'flex';
+}
+function saveKadesInfo() {
+    appData.kades.name = document.getElementById('kades-input-name').value;
+    appData.kades.title = document.getElementById('kades-input-title').value;
+    appData.kades.desc = document.getElementById('kades-input-desc').value;
+    save(); closeModal('kades-modal');
+}
+function editPesantrenInfo() {
+    document.getElementById('pesantren-input-name').value = appData.pesantren.name;
+    document.getElementById('pesantren-input-desc').value = appData.pesantren.desc;
+    document.getElementById('pesantren-modal').style.display = 'flex';
+}
+function savePesantrenInfo() {
+    appData.pesantren.name = document.getElementById('pesantren-input-name').value;
+    appData.pesantren.desc = document.getElementById('pesantren-input-desc').value;
+    save(); closeModal('pesantren-modal');
+}
+function editRajCaption() {
+    document.getElementById('raj-caption-input').value = appData.rajCaption;
+    document.getElementById('raj-caption-modal').style.display = 'flex';
+}
+function saveRajCaption() {
+    appData.rajCaption = document.getElementById('raj-caption-input').value;
+    save(); closeModal('raj-caption-modal');
+}
+
+// =============================================
+// UTILS
+// =============================================
+function triggerUpload(id) { document.getElementById(id).click(); }
+function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+window.onclick = function(e) { if (e.target.classList.contains('modal')) e.target.style.display = 'none'; };
+
+// =============================================
+// COUNTDOWN
+// =============================================
+const targetDate = new Date("June 28, 2026 00:00:00").getTime();
+setInterval(() => {
+    const dist = targetDate - Date.now();
+    if (dist > 0) {
+        document.getElementById('d').innerText = Math.floor(dist / (1000*60*60*24));
+        document.getElementById('h').innerText = Math.floor((dist % (1000*60*60*24)) / (1000*60*60));
+        document.getElementById('m').innerText = Math.floor((dist % (1000*60*60)) / (1000*60));
+        document.getElementById('s').innerText = Math.floor((dist % (1000*60)) / 1000);
+    }
+}, 1000);
+
+renderAll();
+</script>
+</body>
+</html>
